@@ -45,7 +45,7 @@ int	LoadCupsLibrary(CUPSLIB_FUNCTION* cupsfun)
 		"/usr/local/lib/libcups.dylib",
 		"/usr/local/lib/libcups.2.dylib",
 #else
-#ifdef __x86_64__
+#if defined(__x86_64__) || defined(__aarch64__)
 		// try 64 bit libraries on 64 bit system
 		"/usr/lib64/libcups.so",
 		"/usr/lib64/libcups.so.2",
@@ -250,7 +250,7 @@ int	LoadGsLibrary(GSLIB_FUNCTION* gsfun)
 		"/usr/lib/libgs.8.dylib",
 		"/usr/local/lib/libgs.dylib",
 		"/usr/local/lib/libgs.8.dylib",
-#elif defined(__x86_64__)
+#elif defined(__x86_64__) || defined(__aarch64__)
 		// try 64 bit libraries on 64 bit system
 		"/usr/lib64/libgs.so",
 		"/usr/lib64/libgs.so.8",
